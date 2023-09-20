@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: #660303;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+        
+        .calculate {
+            background: #031321;
+            border-radius: 10px;
+            padding: 15px;
+            border-radius: 20px;
+        }
+        
+        .calculate form input {
+            height: 50px;
+            width: 50px;
+            background: transparent;
+            color: white;
+            box-shadow: -4px -4px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 15px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        form .display {
+            display: flex;
+            justify-content: flex-end;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.582);
+        }
+        
+        form .display input {
+            color: black;
+            font-size: 40px;
+            text-align: right;
+            background: transparent;
+            flex: 1;
+            box-shadow: none;
+        }
+        
+        form input.equal {
+            width: 135px;
+        }
+        
+        @media screen and (max-width:768px) {
+            body {
+                background: #0d1427;
+            }
+            .calculate {
+                background: #630404;
+                border-radius: 10px;
+                padding: 15px;
+            }
+            .calculate form input {
+                height: 40px;
+                width: 40px;
+                background: transparent;
+                color: white;
+                box-shadow: -4px -4px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+                border-radius: 2px;
+                margin: 10px;
+                border: 0;
+                outline: 0;
+                cursor: pointer;
+                font-size: 20px;
+                text-align: center;
+            }
+            form .display {
+                display: flex;
+                justify-content: flex-end;
+                border-radius: 10px;
+                margin: 10px 0;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.582);
+            }
+            form .display input {
+                color: black;
+                font-size: 20px;
+                text-align: right;
+                background: transparent;
+                flex: 1;
+                box-shadow: none;
+            }
+            form input.equal {
+                width: 55px;
+            }
+        }
+        
+        @media screen and (max-width:425px) {
+            body {
+                background: #0d1427;
+            }
+            .calculate {
+                background: #630404;
+                border-radius: 10px;
+                padding: 10px;
+            }
+            .calculate form input {
+                height: 20px;
+                width: 20px;
+                background: transparent;
+                color: white;
+                box-shadow: -4px -4px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+                border-radius: 2px;
+                margin: 5px;
+                border: 0;
+                outline: 0;
+                cursor: pointer;
+                font-size: 16px;
+                text-align: center;
+            }
+            form .display {
+                display: flex;
+                justify-content: flex-end;
+                border-radius: 10px;
+                margin: 10px 0;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.582);
+            }
+            form .display input {
+                color: black;
+                font-size: 20px;
+                text-align: right;
+                background: transparent;
+                flex: 1;
+                box-shadow: none;
+            }
+            form input.equal {
+                width: 55px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculate">
+            <form>
+                <div class="display">
+                    <input type="text" name="display">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="display.value= ' '">
+                    <input type="button" value="DE" onclick="display.value=display.value.toString().slice(0,-1)">
+                    <input type="button" value="." onclick="display.value+= '.'">
+                    <input type="button" value="/" onclick="display.value+= '/'">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="display.value+= '7'">
+                    <input type="button" value="8" onclick="display.value+='8'">
+                    <input type="button" value="9" onclick="display.value+= '.'">
+                    <input type="button" value="*" onclick="display.value+= '*'">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="display.value+= '4'">
+                    <input type="button" value="5" onclick="display.value+='5'">
+                    <input type="button" value="6" onclick="display.value+= '6'">
+                    <input type="button" value="-" onclick="display.value+= '-'">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="display.value+= '1'">
+                    <input type="button" value="2" onclick="display.value+='2'">
+                    <input type="button" value="3" onclick="display.value+= '3'">
+                    <input type="button" value="+" onclick="display.value+= '+'">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="display.value+= '00'">
+                    <input type="button" value="0" onclick="display.value+='0'">
+                    <input type="button" value="=" onclick="display.value = eval(display.value)" class="equal">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
